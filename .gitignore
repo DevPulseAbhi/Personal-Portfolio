@@ -1,0 +1,18 @@
+# dependencies
+node_modules/
+
+# production output
+dist/
+
+# local environment files and secrets
+.env
+.env.*
+!.env.example
+
+# local tooling
+.vscode/
+.DS_Store
+npm-debug.log*
+
+# local resume and private assets
+public/resume/*.pdf
