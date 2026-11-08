@@ -336,10 +336,23 @@ function App() {
           >
             <div className="portrait-card">
               <div className="portrait-grid" />
-              <div className="portrait-initials">AD</div>
+              <div className="abstract-scene" role="img" aria-label="Abstract orbital system visual">
+                <div className="scene-haze" />
+                <div className="scene-orbit scene-orbit-wide" />
+                <div className="scene-orbit scene-orbit-tall" />
+                <div className="scene-ring ring-back" />
+                <div className="scene-core">
+                  <div className="core-surface" />
+                  <div className="core-cut" />
+                  <div className="core-highlight" />
+                </div>
+                <div className="scene-node node-primary" />
+                <div className="scene-node node-secondary" />
+                <div className="scene-tag">FLUID / SYSTEMS</div>
+              </div>
               <div className="portrait-caption">
-                <span>PROFILE / 001</span>
-                <strong>Curious by default.</strong>
+                <span>ABSTRACT / 001</span>
+                <strong>Ideas in motion.</strong>
               </div>
               <div className="orbit orbit-a" />
               <div className="orbit orbit-b" />
