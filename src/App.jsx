@@ -493,6 +493,15 @@ function App() {
                 className={`project-card accent-${project.accent} ${index === 0 ? "project-featured" : ""}`}
                 key={project.key}
                 onClick={() => setSelectedProject(project)}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    setSelectedProject(project);
+                  }
+                }}
+                tabIndex={0}
+                role="button"
+                aria-label={`View ${project.name} details`}
               >
                 <div className="project-art">
                   <span className="project-index">0{index + 1}</span>

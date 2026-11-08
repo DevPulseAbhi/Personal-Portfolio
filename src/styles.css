@@ -485,6 +485,14 @@ h2 em,
     transform: rotate(-90deg);
 }
 
+:root[data-theme='light'] .abstract-scene {
+    filter: brightness(.54) contrast(1.2) saturate(.95);
+}
+
+:root[data-theme='light'] .scene-haze {
+    opacity: .34;
+}
+
 @keyframes scene-float {
     0%, 100% { transform: translateY(0) rotateZ(0deg); }
     50% { transform: translateY(-8px) rotateZ(.5deg); }
@@ -769,10 +777,46 @@ h2 {
 }
 
 .skill-group {
+    position: relative;
+    overflow: hidden;
     min-height: 185px;
     padding: 21px;
     background: var(--surface);
     border: 1px solid var(--line);
+    transition: transform 280ms cubic-bezier(.22, 1, .36, 1), border-color 280ms ease, background 280ms ease, box-shadow 280ms ease;
+}
+
+.skill-group::before {
+    position: absolute;
+    content: "";
+    width: 120px;
+    height: 120px;
+    top: -72px;
+    right: -52px;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--accent) 16%, transparent);
+    filter: blur(18px);
+    opacity: 0;
+    transition: opacity 280ms ease, transform 280ms ease;
+}
+
+.skill-group:hover,
+.skill-group:focus-within {
+    transform: translateY(-5px);
+    border-color: color-mix(in srgb, var(--accent) 62%, var(--line));
+    background: color-mix(in srgb, var(--surface) 88%, var(--accent));
+    box-shadow: 0 15px 32px color-mix(in srgb, var(--bg) 70%, transparent);
+}
+
+.skill-group:hover::before,
+.skill-group:focus-within::before {
+    opacity: 1;
+    transform: translate(-18px, 18px);
+}
+
+.skill-group:hover .eyebrow,
+.skill-group:focus-within .eyebrow {
+    color: var(--accent);
 }
 
 .skill-list {
@@ -798,15 +842,47 @@ h2 {
 }
 
 .project-card {
+    position: relative;
+    overflow: hidden;
     grid-column: span 2;
     background: var(--surface);
     border: 1px solid var(--line);
     cursor: pointer;
-    transition: border-color .2s;
+    transition: border-color 280ms ease, background 280ms ease, box-shadow 280ms ease;
 }
 
-.project-card:hover {
+.project-card::before {
+    position: absolute;
+    content: "";
+    width: 180px;
+    height: 180px;
+    top: -110px;
+    right: -80px;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--accent) 17%, transparent);
+    filter: blur(25px);
+    opacity: 0;
+    transition: opacity 280ms ease, transform 280ms ease;
+    pointer-events: none;
+}
+
+.project-card:hover,
+.project-card:focus-visible {
+    outline: none;
     border-color: color-mix(in srgb, var(--accent) 70%, transparent);
+    background: color-mix(in srgb, var(--surface) 88%, var(--accent));
+    box-shadow: 0 18px 38px color-mix(in srgb, var(--bg) 72%, transparent);
+}
+
+.project-card:hover::before,
+.project-card:focus-visible::before {
+    opacity: 1;
+    transform: translate(-18px, 18px);
+}
+
+.project-card > * {
+    position: relative;
+    z-index: 1;
 }
 
 .project-featured {
@@ -1594,6 +1670,11 @@ select {
     .portrait-card:hover .abstract-scene {
         transform: none !important;
         animation: none !important;
+    }
+
+    .skill-group:hover,
+    .skill-group:focus-within {
+        transform: none !important;
     }
 }
 

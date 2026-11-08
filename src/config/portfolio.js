@@ -20,7 +20,7 @@ export const portfolio = {
     skillGroups: [
         { label: 'Programming', items: ['C', 'C++', 'Java', 'Python', 'JavaScript'] },
         { label: 'Frontend', items: ['HTML5', 'CSS3', 'React.js'] },
-        { label: 'Backend & data', items: ['Java', 'MySQL', 'Firebase', 'Oracle Database'] },
+        { label: 'Backend & data', items: ['Java', 'Node.js', 'MySQL', 'Firebase', 'Oracle Database'] },
         { label: 'Cloud & DevOps', items: ['Cloud Computing', 'Linux', 'Git', 'GitHub', 'Docker', 'CI/CD', 'Cloud Infrastructure'] },
         { label: 'Tools', items: ['VS Code', 'IntelliJ IDEA', 'Postman', 'Streamlit'] }
     ],
