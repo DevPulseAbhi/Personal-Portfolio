@@ -3,7 +3,7 @@ export const portfolio = {
     initials: 'AD',
     title: 'Aspiring Cloud & DevOps Engineer | Full Stack Developer',
     specialization: 'Cloud Computing & DevOps',
-    location: 'Meerut, Uttar Pradesh, India',
+    location: 'Meerut, India',
     tagline: 'Building, Automating, and Exploring the Future of Technology.',
     githubUsername: 'DevPulseAbhi',
     githubUrl: 'https://github.com/DevPulseAbhi',
