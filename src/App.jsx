@@ -248,7 +248,7 @@ function App() {
       <header className="nav-wrap">
         <nav className="nav container" aria-label="Main navigation">
           <a className="brand" href="#top" aria-label="Abhinav Deshwal home">
-            <span>AD</span>
+            <img src="/logo.png" alt="" />
             <strong>
               ABHINAV<span>.</span>
             </strong>
@@ -853,7 +853,7 @@ function App() {
       <footer className="footer container">
         <div className="footer-top">
           <a className="brand" href="#top">
-            <span>AD</span>
+            <img src="/logo.png" alt="" />
             <strong>
               ABHINAV<span>.</span>
             </strong>

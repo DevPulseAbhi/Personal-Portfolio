@@ -127,14 +127,13 @@ button {
     letter-spacing: .12em;
 }
 
-.brand>span {
+.brand>img {
     display: grid;
     place-items: center;
     width: 30px;
     height: 30px;
-    border: 1px solid var(--accent);
-    color: var(--accent);
-    font: 500 10px var(--mono);
+    object-fit: contain;
+    flex: 0 0 30px;
 }
 
 .brand strong {
