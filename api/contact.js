@@ -54,7 +54,7 @@ export default async function handler(request, response) {
       to: [recipient],
       replyTo: email,
       subject: `Portfolio inquiry: ${subject}`,
-      text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
+      text: message,
     });
 
     if (error) {
