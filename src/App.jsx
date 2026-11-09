@@ -216,10 +216,29 @@ function App() {
     window.setTimeout(() => setCopied(false), 1800);
   }
 
-  function submitContact(event) {
+  async function submitContact(event) {
     event.preventDefault();
-    setContactStatus("ready");
-    window.location.href = `mailto:${portfolio.email}?subject=Portfolio inquiry from ${event.currentTarget.name.value}&body=${encodeURIComponent(event.currentTarget.message.value)}`;
+    setContactStatus("sending");
+
+    const form = event.currentTarget;
+    const payload = Object.fromEntries(new FormData(form));
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.error || "Message delivery failed.");
+
+      form.reset();
+      setContactStatus("sent");
+    } catch (error) {
+      console.error("Contact form submission failed:", error);
+      setContactStatus(error.message || "error");
+    }
   }
 
   return (
@@ -806,12 +825,24 @@ function App() {
                   placeholder="A few words to start..."
                 />
               </label>
-              <button className="button button-primary" type="submit">
-                Send via email <ArrowUpRight size={16} />
+              <button
+                className="button button-primary"
+                type="submit"
+                disabled={contactStatus === "sending"}
+              >
+                {contactStatus === "sending" ? "Sending..." : "Send message"}{" "}
+                <ArrowUpRight size={16} />
               </button>
-              {contactStatus === "ready" && (
+              {contactStatus === "sent" && (
                 <small className="form-note">
-                  Your email client should open with the message ready to send.
+                  Thanks — your message has been sent.
+                </small>
+              )}
+              {contactStatus !== "idle" &&
+                contactStatus !== "sending" &&
+                contactStatus !== "sent" && (
+                <small className="form-note">
+                  {contactStatus}
                 </small>
               )}
             </form>
