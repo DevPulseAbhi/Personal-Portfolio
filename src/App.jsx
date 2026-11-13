@@ -272,8 +272,13 @@ function App() {
             >
               {theme === "dark" ? <Sun size={17} /> : <Moon size={17} />}
             </button>
-            <a className="nav-cta" href={`mailto:${portfolio.email}`}>
-              Let's talk <ArrowUpRight size={15} />
+            <a
+              className="nav-cta"
+              href={portfolio.resumePath}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Resume <ArrowUpRight size={15} />
             </a>
             <button
               className="menu-button icon-button"
