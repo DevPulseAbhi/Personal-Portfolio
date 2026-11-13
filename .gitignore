@@ -16,3 +16,4 @@ npm-debug.log*
 
 # local resume and private assets
 public/resume/*.pdf
+!public/resume/Abhinav_Deshwal_Resume.pdf

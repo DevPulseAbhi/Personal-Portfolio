@@ -1410,6 +1410,12 @@ select {
     color: var(--faint) !important;
 }
 
+.resume-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .resume-section { padding-bottom: 120px; }
 .resume-panel { display: grid; grid-template-columns: 1fr 1fr auto; align-items: end; gap: 35px; padding: 36px; border: 1px solid var(--line); background: linear-gradient(110deg, var(--surface), transparent); }
 .resume-panel h2 { margin: 13px 0 0; font-size: 42px; }

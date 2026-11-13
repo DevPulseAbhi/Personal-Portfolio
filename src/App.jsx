@@ -524,12 +524,12 @@ function App() {
               >
                 <div className="project-art">
                   <span className="project-index">0{index + 1}</span>
-                    <div className="art-symbol">
-                      {(() => {
-                        const ProjectIcon = projectIcons[project.icon] || [MapPin, Sparkles, Server, Code2, Zap, Network][index];
-                        return <ProjectIcon />;
-                      })()}
-                    </div>
+                  <div className="art-symbol">
+                    {(() => {
+                      const ProjectIcon = projectIcons[project.icon] || [MapPin, Sparkles, Server, Code2, Zap, Network][index];
+                      return <ProjectIcon />;
+                    })()}
+                  </div>
                   <span className="art-corner">
                     {project.key.toUpperCase()} / 2026
                   </span>
@@ -743,24 +743,41 @@ function App() {
 
         <section className="section container resume-section" data-reveal>
           <SectionLabel index="07" children="Resume" />
+
           <div className="resume-panel">
             <div>
-              <span className="eyebrow">A work in progress</span>
+              <span className="eyebrow">My professional profile</span>
               <h2>
-                Resume
+                Let's take a
                 <br />
-                <em>coming soon.</em>
+                <em>closer look.</em>
               </h2>
             </div>
+
             <p>
-              The full story is being shaped with the same care as the work. A
-              downloadable PDF will appear here when it is ready.
+              Explore my resume for an overview of my education, technical skills,
+              and projects spanning Cloud Computing, DevOps, and full-stack
+              development.
             </p>
-            {portfolio.resumeAvailable && (
-              <a className="button button-primary" href={portfolio.resumePath}>
+
+            <div className="resume-actions">
+              <a
+                className="button button-primary"
+                href={portfolio.resumePath}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Preview Resume <ArrowUpRight size={16} />
+              </a>
+
+              <a
+                className="button button-quiet"
+                href={portfolio.resumePath}
+                download="Abhinav_Deshwal_Resume.pdf"
+              >
                 Download PDF <ArrowUpRight size={16} />
               </a>
-            )}
+            </div>
           </div>
         </section>
 
@@ -841,10 +858,10 @@ function App() {
               {contactStatus !== "idle" &&
                 contactStatus !== "sending" &&
                 contactStatus !== "sent" && (
-                <small className="form-note">
-                  {contactStatus}
-                </small>
-              )}
+                  <small className="form-note">
+                    {contactStatus}
+                  </small>
+                )}
             </form>
           </div>
         </section>

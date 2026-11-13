@@ -25,7 +25,7 @@ export const portfolio = {
         { label: 'Tools', items: ['VS Code', 'IntelliJ IDEA', 'Postman', 'Streamlit'] }
     ],
     exploring: ['Docker', 'Kubernetes', 'AWS', 'CI/CD', 'Linux administration', 'Infrastructure as Code', 'Cloud architecture', 'AI-powered development tools'],
-    resumeAvailable: false,
+    resumeAvailable: true,
     projects: [
         { key: 'odyvia', name: 'Odyvia', eyebrow: 'Cloud-based travel booking', description: 'A responsive travel booking experience with authentication, cloud data, and a frontend built for movement.', stack: ['HTML', 'CSS', 'JavaScript', 'Firebase'], accent: 'lime' },
         { key: 'learnwise', name: 'LearnWise', eyebrow: 'Adaptive learning system', description: 'An intelligent learning platform shaped around adaptive experiences and practical full-stack development.', stack: ['React', 'Java', 'MySQL', 'AI API'], accent: 'cyan', icon: 'learning' },
